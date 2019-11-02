@@ -1,9 +1,16 @@
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink, Route} from 'react-router-dom';
+import Nav from '../styles/NavigationBar';
 
 const NavBar = props => {
     return (
-        <div>
+        <Nav>
+            <Route to = "/apple" component = {() => {
+                window.location.href = "https://www.apple.com/";
+                return null;
+            }}>
+                <img src = "https://www.apple.com/ac/globalnav/4/en_US/images/globalnav/apple/image_large.svg" />
+            </Route>
             <NavLink to = "/mac">Mac</NavLink>
             <NavLink to = "/ipad">iPad</NavLink>
             <NavLink to = "/iphone">iPhone</NavLink>
@@ -11,7 +18,7 @@ const NavBar = props => {
             <NavLink to = "/tv">TV</NavLink>
             <NavLink to = "/music">Music</NavLink>
             <NavLink to = "/support">Support</NavLink>
-        </div>
+        </Nav>
     );
 };
 

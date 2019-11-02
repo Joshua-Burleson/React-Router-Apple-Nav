@@ -1,19 +1,22 @@
 import React from 'react';
 import AppData from '../app-data/subnav.json';
+import SubNavItem from '../styles/SubNavItem';
+import Nav from '../styles/SubNavigationBar';
 
 const Test = props => {
     console.log(props.match.params.selection);
     return (
-        <nav>
+        <Nav>
             {AppData.menus[props.match.params.selection].map((navItem, index) => {
-                return (<div key = {navItem.name.concat(index)}>
-                    <h3>{navItem.name}</h3>
+                return (
+                <SubNavItem key = {navItem.name.concat(index)} href = {navItem.external}>
                     <img src={navItem.img} />
-                    {navItem.new === false && <p>New</p>}
-                    {navItem.external && <a href={navItem.external}>{navItem.name}</a>}
-                </div>);
+                    <p>{navItem.name}</p>
+                    {navItem.new === false && <span>New</span>}
+                </SubNavItem>
+                );
             })}
-        </nav>
+        </Nav>
     )
 }
 
