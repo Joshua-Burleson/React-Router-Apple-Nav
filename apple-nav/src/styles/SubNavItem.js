@@ -8,6 +8,7 @@ export default styled.a`
     align-items: center;
     max-width: 70px;
     text-decoration: none;
+    color: black;
 
     img {
         height: 54px;
@@ -24,5 +25,10 @@ export default styled.a`
         font-size: 0.75rem;
         color: red;
         margin-top: -0.75rem;
+    }
+
+    &:visited {
+        color: black;
+        text-decoration: none;
     }
 `;
